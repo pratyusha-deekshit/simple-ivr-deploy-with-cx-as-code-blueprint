@@ -94,15 +94,9 @@ resource "genesyscloud_routing_queue" "queue_K401" {
   }
 }
 
-resource "genesyscloud_flow" "mysimpleflow" {
-  filepath = "./SimpleFinancialIvr_v2-0.yaml"
-  file_content_hash = filesha256("./SimpleFinancialIvr_v2-0.yaml") 
-}
-
-
 resource "genesyscloud_telephony_providers_edges_did_pool" "mygcv_number" {
-  start_phone_number = "+19205422729"
-  end_phone_number   = "+19205422729"
+  start_phone_number = "+441615527665"
+  end_phone_number   = "+441615527665"
   description        = "GCV Number for inbound calls"
   comments           = "Additional comments"
 }
@@ -110,10 +104,10 @@ resource "genesyscloud_telephony_providers_edges_did_pool" "mygcv_number" {
 resource "genesyscloud_architect_ivr" "mysimple_ivr" {
   name               = "A simple IVR"
   description        = "A sample IVR configuration"
-  dnis               = ["+19205422729", "+19205422729"]
-  open_hours_flow_id = genesyscloud_flow.mysimpleflow.id
+  dnis               = ["+441615527665", "+441615527665"]
+  open_hours_flow_id = genesyscloud_flow.popTest2.id
   depends_on         = [
-    genesyscloud_flow.mysimpleflow,
+    genesyscloud_flow.popTest2,
     genesyscloud_telephony_providers_edges_did_pool.mygcv_number
   ]
 }
