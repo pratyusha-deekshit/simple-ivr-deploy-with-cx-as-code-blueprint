@@ -21,7 +21,7 @@ resource "genesyscloud_user" "sf_johnsmith" {
   addresses {
 
     phone_numbers {
-      number     = "9205551212"
+      number     = "+9205551212"
       media_type = "PHONE"
       type       = "MOBILE"
     }
@@ -45,7 +45,7 @@ resource "genesyscloud_user" "sf_janesmith" {
   addresses {
 
     phone_numbers {
-      number     = "9205551212"
+      number     = "+9205551212"
       media_type = "PHONE"
       type       = "MOBILE"
     }
@@ -93,22 +93,3 @@ resource "genesyscloud_routing_queue" "queue_K401" {
     ring_num = 1
   }
 }
-
-resource "genesyscloud_telephony_providers_edges_did_pool" "mygcv_number" {
-  start_phone_number = "+441615527665"
-  end_phone_number   = "+441615527665"
-  description        = "GCV Number for inbound calls"
-  comments           = "Additional comments"
-}
-
-resource "genesyscloud_architect_ivr" "mysimple_ivr" {
-  name               = "A simple IVR"
-  description        = "A sample IVR configuration"
-  dnis               = ["+441615527665", "+441615527665"]
-  open_hours_flow_id = genesyscloud_flow.popTest2.id
-  depends_on         = [
-    genesyscloud_flow.popTest2,
-    genesyscloud_telephony_providers_edges_did_pool.mygcv_number
-  ]
-}
-
