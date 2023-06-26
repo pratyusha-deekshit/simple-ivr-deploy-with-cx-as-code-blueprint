@@ -1,4 +1,12 @@
 terraform {
+  backend "remote" {
+    organization = "TestPD2442"
+
+    workspaces {
+      name = "autoApplySimpleIVR"
+    }
+  }
+
   required_providers {
     genesyscloud = {
       source = "mypurecloud/genesyscloud"
