@@ -37,7 +37,7 @@ jobs:
     - name: cdDir
       run: cd ..
     - name: goto
-      run: cd blueprint/main.tf
+      run: cd blueprint
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
