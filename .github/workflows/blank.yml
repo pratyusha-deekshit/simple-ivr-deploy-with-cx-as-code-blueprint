@@ -35,6 +35,8 @@ jobs:
       run: terraform init -input=false
       
     - name: cdDir
+      run: cd ..
+    - name: goto
       run: cd blueprint/main.tf
 
     # Generates an execution plan for Terraform
