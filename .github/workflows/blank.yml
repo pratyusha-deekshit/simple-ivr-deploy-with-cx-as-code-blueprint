@@ -35,7 +35,7 @@ jobs:
       run: terraform init -input=false
       
     - name: cdDir
-      run: cd $GITHUB_WORKSPACE/blueprint
+      run: cd blueprint/main.tf
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
