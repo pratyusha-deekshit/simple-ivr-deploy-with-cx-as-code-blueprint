@@ -24,3 +24,7 @@ resource "genesyscloud_tf_export" "export" {
   resource_types     = ["genesyscloud_user"]
   include_state_file = true
 }
+
+data "local_file" "export_config" {
+  filename = "${genesyscloud_tf_export.export.directory}/genesyscloud.tf"
+}
