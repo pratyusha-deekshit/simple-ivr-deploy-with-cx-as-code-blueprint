@@ -46,10 +46,6 @@ jobs:
       working-directory: ./blueprint
       run: terraform apply -auto-approve -input=false
       
-    - name: Archive exported files
-      working-directory: ./genesyscloud
-      uses: actions/upload-artifact@v2
-      with:
-        name: exported-files
-        path: ./genesyscloud
+    - name: Run Terraform state pull
+      run: terraform state pull > genesyscloud/genesyscloud.tf
 
