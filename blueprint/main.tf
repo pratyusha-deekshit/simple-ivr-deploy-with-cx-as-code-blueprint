@@ -3,7 +3,7 @@ terraform {
     organization = "TestPD2442"
 
     workspaces {
-      name = "autoApplySimpleIVR"
+      name = "HIG_test"
     }
   }
 
@@ -18,9 +18,9 @@ provider "genesyscloud" {
   sdk_debug = true
 }
 
-resource "genesyscloud_user" "demo_user1" {
-  email           = "demo.user1@abcd.com"
-  name            = "Demo User1"
+resource "genesyscloud_user" "demo_user2" {
+  email           = "demo.user2@abcd.com"
+  name            = "Demo User2"
   password        = "b@Zinga1972"
   state           = "active"
   department      = "IRA"
@@ -35,7 +35,7 @@ resource "genesyscloud_user" "demo_user1" {
     }
   }
   employer_info {
-    official_name = "Demo User1"
+    official_name = "Demo User2"
     employee_id   = "12345"
     employee_type = "Full-time"
     date_hire     = "2023-03-18"
