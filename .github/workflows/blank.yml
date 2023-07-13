@@ -47,5 +47,6 @@ jobs:
       run: terraform apply -auto-approve -input=false
       
     - name: Run Terraform state pull
+      working-directory: ./blueprint
       run: terraform state pull > genesyscloud/genesyscloud.tf
 
