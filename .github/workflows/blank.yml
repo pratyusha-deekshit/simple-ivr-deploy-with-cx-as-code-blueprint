@@ -45,3 +45,10 @@ jobs:
     - name: Terraform Apply
       working-directory: ./blueprint
       run: terraform apply -auto-approve -input=false
+      
+    - name: Archive exported files
+      uses: actions/upload-artifact@v2
+      with:
+        name: exported-files
+        path: ./genesyscloud
+
