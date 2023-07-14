@@ -18,9 +18,9 @@ provider "genesyscloud" {
   sdk_debug = true
 }
 
-resource "genesyscloud_user" "demo_user3" {
-  email           = "demo.user3@abcd.com"
-  name            = "Demo User3"
+resource "genesyscloud_user" "demo_user4" {
+  email           = "demo.user4@abcd.com"
+  name            = "Demo User4"
   password        = "b@Zinga1972"
   state           = "active"
   department      = "IRA"
@@ -35,7 +35,7 @@ resource "genesyscloud_user" "demo_user3" {
     }
   }
   employer_info {
-    official_name = "Demo User3"
+    official_name = "Demo User4"
     employee_id   = "12345"
     employee_type = "Full-time"
     date_hire     = "2023-03-18"
