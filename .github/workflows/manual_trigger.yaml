@@ -1,6 +1,7 @@
 name: 'Terraform_manual'
 
 on:
+  workflow_dispatch
   branches: [ "main" ]
 
 permissions:
