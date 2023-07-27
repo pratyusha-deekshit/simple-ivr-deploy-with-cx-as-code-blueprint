@@ -10,7 +10,7 @@ provider "genesyscloud" {
   sdk_debug = true
 }
 
-resource "genesyscloud_user" "demo_user4" {
+resource "genesyscloud_user" "demo_user5" {
   email           = "demo.user4@abcd.com"
   name            = "Demo User4"
   password        = "b@Zinga1972"
