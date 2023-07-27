@@ -1,5 +1,16 @@
+terraform {
+  required_providers {
+    genesyscloud = {
+      source = "mypurecloud/genesyscloud"
+    }
+  }
+}
 
-resource "genesyscloud_user" "demo_user5" {
+provider "genesyscloud" {
+  sdk_debug = true
+}
+
+resource "genesyscloud_user" "demo_user4" {
   email           = "demo.user4@abcd.com"
   name            = "Demo User4"
   password        = "b@Zinga1972"
